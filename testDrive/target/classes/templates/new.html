@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div th:replace="menu_nav::header"></div>
+	<div align="center">
+		<h1>Add New Student</h1>
+		<br />
+		<div class="col-sm-5">
+			<form action="#" th:action="@{/save}" th:object="${student}"
+				method="post">
+
+				<div alight="left">
+					<tr>
+						<label class="form-label">Student Name</label>
+						<td><input type="hidden" th:field="*{id}" /> <input
+							type="text" th:field="*{name}" class="form-control"
+							placeholder="name" /></td>
+					</tr>
+				</div>
+
+				<div alight="left">
+
+					<tr>
+						<label class="form-label">Student Last Name</label>
+						<td><input type="text" th:field="*{lastName}"
+							class="form-control" placeholder="lastName" /></td>
+					</tr>
+				</div>
+				<div alight="left">
+					<tr>
+						<label class="form-label">Student Age</label>
+						<td><input type="text" th:field="*{age}" class="form-control"
+							placeholder="age" /></td>
+					</tr>
+				</div>
+				<div alight="left">
+					<tr>
+						<label class="form-label">Student Email</label>
+						<td><input type="text" th:field="*{email}"
+							class="form-control" placeholder="email" /></td>
+					</tr>
+				</div>
+				<div alight="left">
+					<tr>
+						<label class="form-label">Teacher</label>
+						<td><input type="text" th:field="*{teacher}"
+							class="form-control" placeholder="teacher" /></td>
+					</tr>
+				</div>
+				<br>
+				<tr>
+					<td colspan="2"><button type="submit" class="btn btn-info">Save</button>
+					</td>
+				</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>

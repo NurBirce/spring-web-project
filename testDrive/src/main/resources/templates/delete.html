@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Delete Page</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div th:replace="menu_nav::header"></div>
+	<div align="center">
+		<h1>Delete Student</h1>
+		<br />
+		<div class="col-sm-5" th:object="${student}">
+
+			<input type="text" th:value="*{id}" />
+
+			<div alight="left">
+				<tr>
+					<label class="form-label">Student Name</label>
+					<td><input type="text" th:value="*{name}" class="form-control"
+						placeholder="name" /></td>
+				</tr>
+			</div>
+
+			<div alight="left">
+
+				<tr>
+					<label class="form-label">Student Last Name</label>
+					<td><input type="text" th:value="*{lastName}"
+						class="form-control" placeholder="lastName" /></td>
+				</tr>
+			</div>
+			<div alight="left">
+				<tr>
+					<label class="form-label">Student Age</label>
+					<td><input type="text" th:value="*{age}" class="form-control"
+						placeholder="age" /></td>
+				</tr>
+			</div>
+			<div alight="left">
+				<tr>
+					<label class="form-label">Student Email</label>
+					<td><input type="text" th:value="*{email}"
+						class="form-control" placeholder="email" /></td>
+				</tr>
+			</div>
+			<div alight="left">
+				<tr>
+					<label class="form-label">Student Teacher</label>
+					<td><input type="text" th:value="*{teacher}"
+						class="form-control" placeholder="teacher" /></td>
+				</tr>
+			</div>
+			<br>
+			</table>
+				<form action="#" th:action="@{/delete}" th:object="${student}"
+				method="post">
+
+				<input type="hidden" th:field="*{id}" />
+				<button type="submit" class="btn btn-info">Delete</button>
+
+			</form>
+
+		</div>
+</body>
+</html>
